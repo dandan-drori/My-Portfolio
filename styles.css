@@ -12,6 +12,7 @@ body {
 header {
   position: sticky;
   top: 0;
+  z-index: 9999;
 }
 
 nav {
@@ -61,9 +62,7 @@ nav ul li a {
 
 section {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
   font-size: 3rem;
   font-weight: bold;
   color: #eee;
@@ -72,7 +71,17 @@ section {
 #home {
   position: relative;
   top: -10vh;
-  z-index: -5;
+  grid-template-columns: 8rem 1fr 3rem 3rem;
+  grid-template-rows: 1fr 7rem 3rem 5rem 5rem 3rem 1fr;
+  column-gap: 3rem;
+  grid-template-areas: 
+      ". . . ."
+      ". h3 . ."
+      ". . . ."
+      ". p1 . . "
+      ". p2 . ."
+      ". . . ."
+      ". btn-container . .";
 }
 
 #projects {
@@ -117,4 +126,65 @@ section {
   transform: skewY(-8deg);
   z-index: -4;
   background-image: linear-gradient(to top right, #7f00ff, #e100ff);
+}
+
+#home h3, #home p {
+  position: relative;
+}
+
+#home h3 {
+  grid-area: h3;
+  /* top: 25vh; */
+}
+
+#home .p1 {
+  grid-area: p1;
+  /* top: 8vh; */
+  font-size: 1.2rem;
+}
+
+#home .p2 {
+  grid-area: p2;
+  font-size: 1.2rem;
+  /* top: -17vh; */
+}
+
+#home .btn-container {
+  position: relative;
+  grid-area: btn-container;
+  width: 30vw;
+  z-index: 1;
+  /* top: -40vh; */
+}
+
+#home .btn-website,
+#home .btn-hire {
+  position: relative;
+  min-width: 13vw;
+  min-height: 5vh;
+  font-size: 1rem;
+  border-radius: 20px;
+  box-shadow: 3px 3px 6px rgba(30, 30, 30, 0.5),
+    -3px -3px 6px rgba(230, 230, 230, 0.5);
+    border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#home .btn-website {
+  grid-area: website;
+  background-image: linear-gradient(to top right, #f12711, #f5af19);
+}
+
+#home .btn-hire {
+  grid-area: hire;
+  background-image: linear-gradient(to top right, #eee, #ccc);
+}
+
+#home .btn-website:hover {
+  background-image: linear-gradient(to top right, #eee, #ccc);
+}
+
+#home .btn-hire:hover {
+  background-image: linear-gradient(to top right, #f12711, #f5af19);
 }
