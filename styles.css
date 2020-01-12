@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -71,8 +71,8 @@ section {
 #home {
   position: relative;
   top: -10vh;
-  grid-template-columns: 8rem 1fr 3rem 3rem;
-  grid-template-rows: 1fr 7rem 3rem 5rem 5rem 3rem 1fr;
+  grid-template-columns: 7rem 1fr 3rem 3rem;
+  grid-template-rows: 0.8fr 7rem 3rem 5rem 5rem 3rem 1fr;
   column-gap: 3rem;
   grid-template-areas: 
       ". . . ."
@@ -134,19 +134,16 @@ section {
 
 #home h3 {
   grid-area: h3;
-  /* top: 25vh; */
 }
 
 #home .p1 {
   grid-area: p1;
-  /* top: 8vh; */
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 #home .p2 {
   grid-area: p2;
-  font-size: 1.2rem;
-  /* top: -17vh; */
+  font-size: 1.3rem;
 }
 
 #home .btn-container {
@@ -154,15 +151,14 @@ section {
   grid-area: btn-container;
   width: 30vw;
   z-index: 1;
-  /* top: -40vh; */
 }
 
 #home .btn-website,
 #home .btn-hire {
   position: relative;
-  min-width: 13vw;
+  min-width: 14vw;
   min-height: 5vh;
-  font-size: 1rem;
+  font-size: 1.1rem;
   border-radius: 20px;
   box-shadow: 3px 3px 6px rgba(30, 30, 30, 0.5),
     -3px -3px 6px rgba(230, 230, 230, 0.5);
@@ -174,6 +170,7 @@ section {
 #home .btn-website {
   grid-area: website;
   background-image: linear-gradient(to top right, #f12711, #f5af19);
+  color: #eee;
 }
 
 #home .btn-hire {
@@ -183,8 +180,18 @@ section {
 
 #home .btn-website:hover {
   background-image: linear-gradient(to top right, #eee, #ccc);
+  color: #050505;
 }
 
 #home .btn-hire:hover {
   background-image: linear-gradient(to top right, #f12711, #f5af19);
+  color: #eee;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.95);
 }
