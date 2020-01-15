@@ -212,7 +212,6 @@ button:active {
   overflow: auto; 
   background-color: rgb(0,0,0); 
   background-color: rgba(0,0,0,0.4); 
-  transition: all 5000ms ease-in-out;
 }
 
 .modal-content {
@@ -225,7 +224,6 @@ button:active {
   height: 55%;
   border-radius: 30px;
   font-size: larger;
-  transition: all 5000ms ease-in-out;
 }
 
 .close {
@@ -256,15 +254,45 @@ button:active {
   margin-bottom: 3rem;
 }
 
-input {
-  background-color: #fff;
-  max-width: 15vw;
-}
-
 form {
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
+  border: 2px solid white;
   max-width: 40vw;
+  max-height: 75vh;
   padding: 1rem;
+  font-size: medium;
+  border-radius: 30px;
+  background-color: white;
+}
+
+input {
+  background-color: #fff;
+  max-width: 15vw;
+  height: 1.5rem;
+  margin: 1rem;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+label {
+  margin-left: 1rem;
+  color: #050505;
+}
+
+.submit {
+  border-radius: 30px;
+  min-height: 2rem;
+  width: 5vw;
+  background-image: linear-gradient(to top right, #f12711, #f5af19);
+  border: none;
+  cursor: pointer;
+}
+
+.submit:focus {
+  outline: none;
+}
+
+.submit:active {
+  transform: scale(0.95);
 }

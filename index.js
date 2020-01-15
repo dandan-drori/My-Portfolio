@@ -42,10 +42,11 @@ sections.forEach(section => {
 // modal //
 
 const modal = document.getElementById("modal");
-const btn = document.getElementsByClassName('btn-contact')[0];
+const submit = document.getElementsByClassName('submit')[0];
 const span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
+submit.onclick = function(e) {
+  e.preventDefault();
   modal.style.display = "block";
 }
 
@@ -58,3 +59,4 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
