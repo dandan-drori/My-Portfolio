@@ -2,8 +2,8 @@ const sections = document.querySelectorAll('section');
 const bubble = document.querySelector('.bubble');
 const gradients = [
   'linear-gradient(to top right, #f12711, #f5af19)',
-  'linear-gradient(to top right, #2193b0, #6dd5ed)',
-  'linear-gradient(to top right, #7f00ff, #e100ff)'
+  'linear-gradient(to top right, #f12711, #f5af19)',
+  'linear-gradient(to top right, #f12711, #f5af19)'
 ];
 
 const options = {
@@ -39,3 +39,22 @@ sections.forEach(section => {
   observer.observe(section);
 });
 
+// modal //
+
+const modal = document.getElementById("modal");
+const btn = document.getElementsByClassName('btn-contact')[0];
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
