@@ -91,21 +91,30 @@ section {
   position: relative;
   background: #f5af19;
   top: -10vh;
-  grid-template-columns: 5rem 1fr 1fr 5rem;
-  grid-template-rows: 5rem 1fr 1fr 5rem;
+  /* grid-template-columns: 5rem 1fr 1fr 5rem;
+  grid-template-rows: 5rem 1fr 1fr 5rem; */
   column-gap: 3rem;
   row-gap: 3rem;
   grid-template-areas: 
     ". . . ."
     ". codepen codepen ."
-    ". . . ."
-    ". . . ."
+    ". n1 n2 ."
+    ". n3 n3 ."
   ;
+}
+
+#n1 {
+  grid-area: n1;
+}
+#n2 {
+  grid-area: n2;
+}
+#n3 {
+  grid-area: n3;
 }
 
 #contact {
   position: relative;
-  /* top: 35vh; */
 }
 
 #home h3, #home p {
@@ -201,7 +210,7 @@ button:active {
   width: 30rem;
   height: 30rem;
   top: 15rem;
-  right: 15rem;
+  left: 80rem;
 }
 
 .circle2 {
@@ -224,8 +233,6 @@ button:active {
   bottom: 8rem;
   left: 53rem;
 }
-
-
 
 .codepen {
   grid-area: codepen;
@@ -296,10 +303,12 @@ button:active {
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border: 2px solid white;
-  max-width: 40vw;
-  max-height: 75vh;
+  max-width: 16vw;
+  max-height: 85vh;
   padding: 1rem;
+  margin-left: 1rem;
   font-size: medium;
   border-radius: 30px;
   background-color: white;
@@ -321,11 +330,16 @@ label {
 
 .submit {
   border-radius: 30px;
-  min-height: 2rem;
-  width: 5vw;
+  min-height: 2.5rem;
+  width: 6vw;
   background-image: linear-gradient(to top right, #f12711, #f5af19);
   border: none;
   cursor: pointer;
+  box-shadow: 3px 3px 6px rgba(30, 30, 30, 0.5),
+    -3px -3px 6px rgba(230, 230, 230, 0.5);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
 }
 
 .submit:focus {
@@ -334,4 +348,41 @@ label {
 
 .submit:active {
   transform: scale(0.95);
+}
+
+input[name="message"] {
+  height: 12rem;
+}
+
+input:focus {
+  border-image-source: linear-gradient(to top right, #f12711, #f5af19);
+  border-width: 3pt;
+  border-image-slice: 1;
+  outline: none;
+}
+
+.fa-envelope {
+  color: rgba(0, 100, 255, 0.7);
+}
+
+.icon-email {
+  display: inline;
+  position: absolute;
+}
+
+#contact form h1 {
+  margin: auto;
+  color: #050505;
+}
+
+#contact form h1:before {
+  content: "Contact Me";
+  background: linear-gradient(to top right, #f12711, #f5af19);
+  position: absolute;
+  width: 100%;
+  background-size: 300%;
+  overflow: hidden;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
